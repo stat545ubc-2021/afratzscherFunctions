@@ -59,7 +59,6 @@ We begin by loading our data and the `testthat` package below:
 
 ``` r
 library(datateachr) # contains cancer_sample dataset, used in MDA 
-# library(tidyverse)
 library(testthat)
 ```
 

@@ -76,10 +76,20 @@ the function can be found below:
 #' Split data into 1) training data and 2) test data for machine learning. 
 #'
 #' @param data: Tibble or data frame that you want to split.
-#' @param train_size: float or fraction between 0.0 and 1.0 that represents the proportion of data in the train split. If it is not possible to split exactly, the train_size will be rounded down (e.g. if 10 rows and train_size = 1/3, train set contains 3 rows, test set contains 7 rows). train_size = 0 means all data is in the test set (training set is empty). train_size = 1 means all data is in the training set (test set is empty). If train_size is not defined by the user, it will be set the default value of 0.7 (7:3 train:test split).
-#' @param shuffle: boolean, determines whether or not to shuffle the data before splitting. The default is shuffle = FALSE. If a random_state is defined, shuffle is automatically set to TRUE.
-#' @param random_state: int, controls the shuffling applied to the data before the split is applied. Set random_state for reproducible output across multiple function calls. The default is random_state = NULL. If a random_state is defined, shuffle is automatically set to TRUE.
-#' @return A list of length 2 containing train-test split of input data. Access training and test data using variable$train and variable$test, respectively. 
+#' @param train_size: float or fraction between 0.0 and 1.0 that represents the proportion of data in 
+#'  the train split. If it is not possible to split exactly, the train_size will be rounded down 
+#'  (e.g. if 10 rows and train_size = 1/3, train set contains 3 rows, test set contains 7 rows). 
+#'  train_size = 0 means all data is in the test set (training set is empty). train_size = 1 means 
+#'  all data is in the training set (test set is empty). If train_size is not defined by the user, 
+#'  it will be set the default value of 0.7 (7:3 train:test split).
+#' @param shuffle: boolean, determines whether or not to shuffle the data before splitting. 
+#'  The default is shuffle = FALSE. If a random_state is defined, shuffle is 
+#'  automatically set to TRUE.
+#' @param random_state: int, controls the shuffling applied to the data before the split is applied. 
+#'  Set random_state for reproducible output across multiple function calls. 
+#'  The default is random_state = NULL. If a random_state is defined, shuffle is automatically set to TRUE.
+#' @return A list of length 2 containing train-test split of input data. 
+#'  Access training and test data using variable$train and variable$test, respectively. 
 #' 
 #' error if `data`, `train_size`, `shuffle`, or `random_state` are not the proper type.
 #' error if `train_size` is not within range (less than 0 or greater than 1).

@@ -99,27 +99,27 @@ get_train_test <- function(data, train_size = 0.7, shuffle = FALSE, random_state
 {
   # check if correct data structure (df)
   if(!is.data.frame(data)) {
-    stop('This function only works for dataframes\n. You have provided an object of class: ', class(data)[1]) 
+    stop('This function only works for dataframes.\n You have provided an object of class: ', class(data)[1]) 
   }
   
   # check that types of variables are correct 
   if (!is.numeric(train_size))
   {
-    stop('The inputed train size is non-numeric\n. You have provided an object of class: ', class(train_size)[1])
+    stop('The inputed train size is non-numeric.\n You have provided an object of class: ', class(train_size)[1])
   }
   if (!(is.numeric(random_state) || (is.null(random_state))))
   {
-    stop('The inputed random state is non-numeric\n. You have provided an object of class: ', class(random_state)[1])
+    stop('The inputed random state is non-numeric.\n You have provided an object of class: ', class(random_state)[1])
   }
   if (!is.logical(shuffle))
   {
-    stop('Shuffle should be a boolean\n. You have provided an object of class: ', class(shuffle)[1])
+    stop('Shuffle should be a boolean.\n You have provided an object of class: ', class(shuffle)[1])
   }
   
   # check if train_size is between 0 and 1
   if (train_size > 1 || train_size < 0)
   {
-    stop('The train size is outside the range\n. Please select a train size between 0.0 and 1.0')
+    stop('The train size is outside the range.\n Please select a train size between 0.0 and 1.0')
   }
   
   # set seed if needed
@@ -134,7 +134,7 @@ get_train_test <- function(data, train_size = 0.7, shuffle = FALSE, random_state
   # Check if dataframe is empty
   if (n_row == 0)
   {
-    stop('There are no rows in this dataframe\n. Please input a dataframe containing data.')
+    stop('There are no rows in this dataframe.\n Please input a dataframe containing data.')
   }
   
   # shuffle data if shuffle is TRUE
@@ -639,8 +639,8 @@ print(arrayInput)
 arrayResult <-get_train_test(arrayInput, train_size = 0.7)
 ```
 
-    ## Error in get_train_test(arrayInput, train_size = 0.7): This function only works for dataframes
-    ## . You have provided an object of class: array
+    ## Error in get_train_test(arrayInput, train_size = 0.7): This function only works for dataframes.
+    ##  You have provided an object of class: array
 
 Also, we will get errors if we do not input `train_size` or
 `random_state`as a numeric or `shuffle` as a boolean:
@@ -650,22 +650,22 @@ input <- cancer_sample[200:210, ]
 wrongTrainSizeResult <-get_train_test(input, train_size = '0.90')
 ```
 
-    ## Error in get_train_test(input, train_size = "0.90"): The inputed train size is non-numeric
-    ## . You have provided an object of class: character
+    ## Error in get_train_test(input, train_size = "0.90"): The inputed train size is non-numeric.
+    ##  You have provided an object of class: character
 
 ``` r
 wrongRandomStateResult <- get_train_test(input, train_size = 0.7, random_state = '123')
 ```
 
-    ## Error in get_train_test(input, train_size = 0.7, random_state = "123"): The inputed random state is non-numeric
-    ## . You have provided an object of class: character
+    ## Error in get_train_test(input, train_size = 0.7, random_state = "123"): The inputed random state is non-numeric.
+    ##  You have provided an object of class: character
 
 ``` r
 wrongShuffleResult <- get_train_test(input, train_size = 0.7, shuffle = 1)
 ```
 
-    ## Error in get_train_test(input, train_size = 0.7, shuffle = 1): Shuffle should be a boolean
-    ## . You have provided an object of class: numeric
+    ## Error in get_train_test(input, train_size = 0.7, shuffle = 1): Shuffle should be a boolean.
+    ##  You have provided an object of class: numeric
 
 However, if multiple types are wrong, only the first input error will be
 printed.
@@ -675,8 +675,8 @@ input <- cancer_sample[200:210, ]
 multipleWrongResult <- get_train_test(input, train_size = '0.7', shuffle = 1, random_state = '123')
 ```
 
-    ## Error in get_train_test(input, train_size = "0.7", shuffle = 1, random_state = "123"): The inputed train size is non-numeric
-    ## . You have provided an object of class: character
+    ## Error in get_train_test(input, train_size = "0.7", shuffle = 1, random_state = "123"): The inputed train size is non-numeric.
+    ##  You have provided an object of class: character
 
 ## Example 6: Errors - Training split outside range
 
@@ -690,15 +690,15 @@ input <- cancer_sample[200:210, ]
 wrongRangeResult <- get_train_test(input, train_size = 1.2)
 ```
 
-    ## Error in get_train_test(input, train_size = 1.2): The train size is outside the range
-    ## . Please select a train size between 0.0 and 1.0
+    ## Error in get_train_test(input, train_size = 1.2): The train size is outside the range.
+    ##  Please select a train size between 0.0 and 1.0
 
 ``` r
 wrongRangeResultFraction <- get_train_test(input, train_size = 4/3)
 ```
 
-    ## Error in get_train_test(input, train_size = 4/3): The train size is outside the range
-    ## . Please select a train size between 0.0 and 1.0
+    ## Error in get_train_test(input, train_size = 4/3): The train size is outside the range.
+    ##  Please select a train size between 0.0 and 1.0
 
 ## Example 7: Errors - Empty dataframe
 
@@ -711,8 +711,8 @@ input <- cancer_sample[FALSE,]
 emptyDFResult <- get_train_test(input)
 ```
 
-    ## Error in get_train_test(input): There are no rows in this dataframe
-    ## . Please input a dataframe containing data.
+    ## Error in get_train_test(input): There are no rows in this dataframe.
+    ##  Please input a dataframe containing data.
 
 # Exercise 4: Function Testing
 

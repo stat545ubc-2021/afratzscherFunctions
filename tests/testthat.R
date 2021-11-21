@@ -1,4 +1,4 @@
 library(testthat)
-library(functionsafratzscher)
+library(afratzscherFunctions)
 
-test_check("functionsafratzscher")
+test_check("afratzscherFunctions")

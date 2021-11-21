@@ -1,6 +1,6 @@
 #' @title A Train/Test Data Splitting Function
 #'
-#' @description Split data into 1) training data and 2) test data for machine learning. 
+#' @description Split data into training data and test data for machine learning. 
 #'
 #' @param data: Tibble or data frame that you want to split.
 #' @param train_size: float or fraction between 0.0 and 1.0 that represents the proportion of data in 

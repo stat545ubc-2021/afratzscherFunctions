@@ -29,7 +29,7 @@ A list of length 2 containing train-test split of input data.
 Access training and test data using \code{variable$train} and \code{variable$test}, respectively.
 }
 \description{
-Split data into 1) training data and 2) test data for machine learning.
+Split data into training data and test data for machine learning.
 }
 \note{
 Errors occur if:

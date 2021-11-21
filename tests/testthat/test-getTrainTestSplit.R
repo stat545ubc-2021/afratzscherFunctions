@@ -1,8 +1,6 @@
 library(datateachr)
 library(palmerpenguins)
 
-df <- data.frame(id = letters[1:10], x = 1:10, y = 11:20)
-
 test_that("Testing wrong data type input (not dataframe or tibble)", {
   expect_error(getTrainTestSplit(c(1,2,3))) # error if try with vector
   expect_error(getTrainTestSplit("1")) # error if try with character
@@ -66,6 +64,7 @@ test_that("Testing getTrainTestSplit function rounding correctly", {
 })
 
 test_that("Testing getTrainTestSplit function on dataframe", {
+  df <- data.frame(id = letters[1:10], x = 1:10, y = 11:20) #df object for testing
   expect_true(identical(getTrainTestSplit(df)$train, df[1:7, ]))
   expect_true(identical(getTrainTestSplit(df)$test, df[8:10, ]))
 })

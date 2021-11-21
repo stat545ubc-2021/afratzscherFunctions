@@ -17,18 +17,22 @@
 #'  The default is random_state = NULL. If a random_state is defined, shuffle is automatically set to TRUE.
 #' @return A list of length 2 containing train-test split of input data. 
 #'  Access training and test data using `variable$train` and `variable$test`, respectively.
+#' 
 #' @examples
+#' # Let us assume our data is stored in the following dataframe:
+#' data <- data.frame(x = 1:10, y = 11:20, letter = letters[1:10])
+#' 
 #' # Using default parameters (7:3 train-test split, no shuffling)
-#' getTrainTestSplit(cancer_sample) 
+#' getTrainTestSplit(data) 
 #' 
 #' # Specified 8:2 train-test split
-#' getTrainTestSplit(cancer_sample, 0.8) 
+#' getTrainTestSplit(data, 0.8) 
 #' 
 #' # Shuffle prior to splitting
-#' getTrainTestSplit(cancer_sample, shuffle = TRUE)
+#' getTrainTestSplit(data, shuffle = TRUE)
 #' 
 #' # Generate reproducible shuffling using `random_state`
-#' getTrainTestSplit(cancer_sample, random_state = 123) 
+#' getTrainTestSplit(data, random_state = 123) 
 #' 
 #' @note 
 #' Errors occur if:

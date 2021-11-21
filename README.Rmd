@@ -26,7 +26,7 @@ The `afratzscherFunctions` package is not available on CRAN yet.
 You can install `afratzscherFunctions` from Github with: 
 ``` r
 # install.packages("devtools")
-devtools::install_github("stat545ubc-2021/afratzscherFunctions"
+devtools::install_github("stat545ubc-2021/afratzscherFunctions")
 ```
 
 ## Example Usage

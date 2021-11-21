@@ -19,7 +19,7 @@ You can install `afratzscherFunctions` from Github with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("stat545ubc-2021/afratzscherFunctions")
+devtools::install_github("stat545ubc-2021/afratzscherFunctions", ref = "0.1.0")
 ```
 
 ## Example Usage
@@ -134,19 +134,19 @@ data
 splitData <- getTrainTestSplit(data, train_size = 0.5, shuffle = TRUE) 
 
 splitData$train
-#>   x  y letter
-#> 2 2 12      b
-#> 4 4 14      d
-#> 5 5 15      e
-#> 3 3 13      c
-#> 1 1 11      a
-splitData$test
 #>     x  y letter
-#> 6   6 16      f
+#> 2   2 12      b
+#> 5   5 15      e
+#> 3   3 13      c
+#> 4   4 14      d
 #> 10 10 20      j
-#> 9   9 19      i
-#> 7   7 17      g
-#> 8   8 18      h
+splitData$test
+#>   x  y letter
+#> 7 7 17      g
+#> 6 6 16      f
+#> 8 8 18      h
+#> 9 9 19      i
+#> 1 1 11      a
 ```
 
 If one wants to have reproducible splits (i. e. always get the same

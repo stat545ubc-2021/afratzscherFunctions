@@ -131,22 +131,22 @@ data
 #> 9   9 19      i
 #> 10 10 20      j
 
-splitData <- getTrainTestSplit(data, shuffle = TRUE) 
+splitData <- getTrainTestSplit(data, train_size = 0.5, shuffle = TRUE) 
 
 splitData$train
-#>     x  y letter
-#> 6   6 16      f
-#> 8   8 18      h
-#> 10 10 20      j
-#> 9   9 19      i
-#> 1   1 11      a
-#> 4   4 14      d
-#> 2   2 12      b
-splitData$test
 #>   x  y letter
+#> 2 2 12      b
+#> 4 4 14      d
 #> 5 5 15      e
 #> 3 3 13      c
-#> 7 7 17      g
+#> 1 1 11      a
+splitData$test
+#>     x  y letter
+#> 6   6 16      f
+#> 10 10 20      j
+#> 9   9 19      i
+#> 7   7 17      g
+#> 8   8 18      h
 ```
 
 If one wants to have reproducible splits (i. e. always get the same
@@ -174,7 +174,7 @@ data
 #> 10 10 20      j
 
 splitData <- getTrainTestSplit(data, train_size = 0.5, random_state = 123) 
-# NOTE: this is the same as inputting getTrainTestSplit(data, shuffle = TRUE, random_state = 123) 
+# NOTE: this is the same as inputting getTrainTestSplit(data, train_size = 0.5, shuffle = TRUE, random_state = 123) 
 
 splitData$train
 #>     x  y letter
@@ -197,7 +197,6 @@ the same `random_state` value:
 
 ``` r
 splitData2 <- getTrainTestSplit(data, train_size = 0.5, random_state = 123) 
-# NOTE: this is the same as inputting getTrainTestSplit(data, shuffle = TRUE, random_state = 123) 
 
 splitData2$train
 #>     x  y letter

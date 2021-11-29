@@ -1,15 +1,10 @@
 Package: afratzscherFunctions
-Title: Split Data into Training and Test Data for Machine Learning
-Version: 0.1.0
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
 Authors@R: 
-    person(given = "Anne-Sophie", 
-           family = "Fratzscher", 
-           email = "afratz@student.ubc.ca", 
-           role = c("aut", "cre"))
-Description: 
-  This package provides a function to split data in a tibble or dataframe into 
-  training and test data for machine learning. There are options to specify the 
-  train-test split ratio and to shuffle the data prior to splitting. 
+    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: What the package does (one paragraph).
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
